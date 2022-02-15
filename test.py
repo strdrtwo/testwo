@@ -51,7 +51,7 @@ def f1(directory, dirtwo):
             f1(path, dirtwo)
 
 '''Удаление файлов и папок'''
-def f2(listdir, listfile, directory):
+def f2(listdir, listfile):
     '''Удаление папок'''
     for path in list(listdir):
         dir = (os.path.relpath(path, firstdir))  # Удаляю корень из пути
@@ -87,5 +87,5 @@ def f2(listdir, listfile, directory):
 while True:
     f1(firstdir, seconddir)
 
-    f2(namedir, namefile, firstdir)
+    f2(namedir, namefile)
     time.sleep(delay)
