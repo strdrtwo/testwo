@@ -34,9 +34,12 @@ def f1(directory, dirtwo):
             if os.path.exists(file) is True:
                 pass
             else:
-                namefile.add(path)
-                logger.info('file created {} '.format(path))
-                shutil.copy(path, file)
+                try:
+                    namefile.add(path)
+                    logger.info('file created {} '.format(path))
+                    shutil.copy(path, file)
+                except PermissionError:
+                    pass
         elif os.path.isdir(path):
             dir = os.path.join(dirtwo, os.path.relpath(path, firstdir))
             namedir.add(path)
